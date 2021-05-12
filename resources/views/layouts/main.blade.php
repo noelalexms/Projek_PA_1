@@ -39,18 +39,56 @@
                 <a class="nav-link active" aria-current="page" href="/kritiksaran">Kritik dan Saran</a>
             </div>
             </div>
+            <div class="navbar2">
+            <div class="d-flex">
+                            <li>
+                                <a  href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div >
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+            </div>
+            </div>
         </div>
     </nav>
 
     @yield('container')
 
-    <br><br>
-    <br><br>
-    <footer class="bg-dark fixed-bottom">
-    <div class="p-2">
-        <h6 class="text-center text-light"><b class="text-primary">Desa Lumban Suhi-Suhi Copyright</b>&copy; Website UMKM ULos By <b class="text-warning">Kelompok 1</b></h6>
-    </div>
+    <center>
+    <footer  class="bg-dark text-light"> 
+      <br>          
+    <div>
+            <div class="flex-c-m flex-w p-b-18">
+                <a href="https://www.del.ac.id/" target="_blank" class="m-all-1">
+                    <img alt="Logo IT Del" width="50" src="http://meatnauli.site/frontend/images/icons/itdel.png">
+                </a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="/" class="m-all-1">
+                    <img alt="Logo Desa Suhi-Suhi" width="60" src="img/logo2.png">
+                </a>
+            </div>
+            <br>
+            <font size='2'>
+            <p class="stext-107 cl6 txt-center">
+                Copyright &copy;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>| Website UMKM Desa Suhi-Suhi Oleh <a href="https://www.del.ac.id/" target="_blank">Kelompok 01 PA 1 - IT Del</a>
+            </p>
+            </font>
+        </div>
     </footer>
+    </center>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

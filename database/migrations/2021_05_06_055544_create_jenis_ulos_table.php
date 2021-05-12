@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePenggunaTable extends Migration
+class CreateJenisUlosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreatePenggunaTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengguna', function (Blueprint $table) {
+        Schema::create('jenis_ulos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('id_pengguna');
+            $table->string("id_jenis");
             $table->string('nama');
-            $table->string('kritik',100);
-            $table->string('saran',100);
+            $table->string('deskripsi',500);
+            $table->string('harga');
+            $table->string('gambar')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreatePenggunaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pengguna');
+        Schema::dropIfExists('jenis_ulos');
     }
 }
